@@ -6,6 +6,9 @@ services:
     environment:
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1
+      - ROS_HOSTNAME=192.168.214.175
+      - ROS_MASTER_URI=http://192.168.214.175:11311
+      - TURTLEBOT3_MODEL=burger
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - ./catkin_ws:/catkin_ws

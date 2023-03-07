@@ -62,5 +62,10 @@ RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 RUN mkdir /tmp/runtime-root
 ENV XDG_RUNTIME_DIR "/tmp/runtime-root"
 ENV NO_AT_BRIDGE 1
+RUN apt-get upgrade -y
+
+ENV ROS_HOSTNAME=127.0.0.1
+ENV ROS_MASTER_URI=http://127.0.0.1:11311
+ENV TURTLEBOT3_MODEL=burger
 
 CMD [ "/bin/bash","-c","source /opt/ros/noetic/setup.bash && roscore"]
